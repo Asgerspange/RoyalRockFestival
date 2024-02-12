@@ -17,7 +17,7 @@
                         <router-link :to="link.route" class="nav-link">{{ link.label }}</router-link>
                     </li>
                     <div class="col-lg-2">
-                        <button class="login-button" type="button">Login</button>
+                        <button class="p-button p-component" type="button">Login</button>
                     </div>
                 </ul>
             </div>
@@ -46,17 +46,6 @@
 </script>
 
 <style lang="scss" scoped>
-
-    .login-button {
-        background-color: purple;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        padding: 2px 2px 2px;
-        width: 100%;
-    
-    }
-
     .navbar {
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         z-index: 10;

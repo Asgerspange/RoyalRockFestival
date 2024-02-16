@@ -1,6 +1,6 @@
 <template>
     <h1 class="mb-5 line"><span>Seneste nyheder</span></h1>
-    <div class="scroll-box">
+    <div :class="[scroll ? 'scroll-box' : '']">
         <div v-for="news in latestNews" :key="news.id" class="col-12 mb-3">
             <div class="row">
                 <div class="col-lg-2">
@@ -14,7 +14,7 @@
                     <hr>
                     <div class="card-body">
                         <h5 class="card-title">{{ news.content }}</h5>
-                        <div class="col-3 float-end">
+                        <div class="float-end">
                             <router-link to="/test" class="p-button p-component text--white">Læs mere</router-link>
                         </div>
                     </div>
@@ -25,35 +25,30 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data() {
         return {
-            latestNews: [
-                {
-                    id: 1,
-                    content: 'Kashmir slutter deres Trespassers-tour af med 3 koncerter i Aalborg, København og Aarhus. Billetterne er allerede sat til salg.',
-                    date: '2020-01-14',
-                    author: 'Christian Nørrelund'
-                },
-                {
-                    id: 2,
-                    content: "Kashmir har netop udgivet deres nye album 'No Balance Palace' og er klar til at tage på tour.",
-                    date: '2020-01-02',
-                    author: 'Christian Nørrelund'
-                },
-                {
-                    id: 3,
-                    content: 'Kashmir har netop udgivet deres nye album No Balance Palace og er klar til at tage på tour.',
-                    date: '2020-01-02',
-                    author: 'Christian Nørrelund'
-                },
-                {
-                    id: 4,
-                    content: 'Kashmir har netop udgivet deres nye album No Balance Palace og er klar til at tage på tour.',
-                    date: '2020-01-02',
-                    author: 'Christian Nørrelund'
-                },
-            ]
+            latestNews: []
+        }
+    },
+
+    props: {
+        scroll: {
+            type: Boolean,
+            default: false
+        }
+    },
+
+    mounted() {
+        this.fetchLatestNews()
+    },
+
+    methods: {
+        fetchLatestNews() {
+            axios.get('https://localhost:7014/api/news').then(response => {
+                this.latestNews = response.data
+            })
         }
     },
 }

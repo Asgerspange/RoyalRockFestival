@@ -39,7 +39,8 @@
             return {
                 user: {
                     name: null,
-                    mail: null
+                    mail: null,
+                    test: null
                 }
             }
         },
@@ -57,6 +58,8 @@
         max-width: 100%;
         height: auto;
         background-color: white;
+        margin: 0 auto;
+        display: block;
     }
     .hero-text {
         position: absolute;

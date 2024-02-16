@@ -2,11 +2,8 @@
     <div class="container">
         <HeroComponent />
         <div class="row mt-5">
-            <div class="col-lg-6">
-                <LatestNewsComponent />
-            </div>
-            <div class="col-lg-6">
-
+            <div class="col-lg-12">
+                <LatestNewsComponent :scroll="true" />
             </div>
         </div>
     </div>

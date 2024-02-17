@@ -10,5 +10,7 @@ namespace backend.Data
         }
 
         public DbSet<News> news { get; set; }
+        public DbSet<Events> events { get; set; }
+        public DbSet<Users> rock_users { get; set; }
     }
 }

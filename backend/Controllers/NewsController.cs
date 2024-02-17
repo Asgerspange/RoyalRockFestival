@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using backend.Data;
 using backend.Models;
 
-
 [Route("api/news")]
 [ApiController]
 public class NewsController : ControllerBase
@@ -16,10 +15,10 @@ public class NewsController : ControllerBase
         }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<News>>> GetUsers()
+    public async Task<ActionResult<IEnumerable<News>>> GetNews()
     {
-        var users = await _context.news.ToListAsync();
-        return Ok(users);
+        var news = await _context.news.ToListAsync();
+        return Ok(news);
     }
 
     [HttpPost("create")]

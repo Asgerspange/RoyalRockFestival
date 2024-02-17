@@ -1,10 +1,8 @@
 <template>
     <div class="container">
         <HeroComponent />
-        <div class="row mt-5">
-            <div class="col-lg-12">
-                <LatestNewsComponent :scroll="true" />
-            </div>
+        <div class="col-lg-12">
+            <LatestNewsComponent :scroll="true" />
         </div>
     </div>
 </template>

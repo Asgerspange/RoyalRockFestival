@@ -1,21 +1,18 @@
 <template>
-    <h1 class="mb-5 line"><span>Seneste nyheder</span></h1>
+    <h1 class="mb-5 line"><span>Kommende Events</span></h1>
     <div :class="[scroll ? 'scroll-box' : '']">
-        <div v-for="news in latestNews" :key="news.id" class="col-12 mb-3">
+        <div v-for="event in events" :key="event.id" class="col-12 mb-3">
             <div class="row">
                 <div class="col-lg-1">
                     <img src="https://via.placeholder.com/80" alt="Placeholder" class="img-fluid">
                 </div>
                 <div class="card col-lg-11">
-                    <div class="d-flex justify-content-between mt-3">
-                        <p class="card-text">{{ news.author }}</p>
-                        <p class="card-text">{{ news.date }}</p>
-                    </div>
-                    <hr>
                     <div class="card-body">
-                        <h5 class="card-title">{{ news.content }}</h5>
+                        <h3 class="card-title">{{ event.title }}</h3>
+                        <h5 class="card-text">{{ event.location }}</h5>
+                        <strong class="card-text">{{ event.date }}</strong>
                         <div class="float-end">
-                            <router-link to="/test" class="p-button p-component text--white">Læs mere</router-link>
+                            <router-link :to="'/events/' + event.id" class="p-button p-component text--white">Læs mere</router-link>
                         </div>
                     </div>
                 </div>
@@ -29,7 +26,7 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            latestNews: []
+            events: []
         }
     },
 
@@ -46,8 +43,9 @@ export default {
 
     methods: {
         fetchLatestNews() {
-            axios.get('https://192.168.87.139:7014/api/news').then(response => {
-                this.latestNews = response.data
+            axios.get('https://192.168.87.139:7014/api/events').then(response => {
+                console.log(response.data)
+                this.events = response.data
             })
         }
     },

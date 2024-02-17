@@ -14,6 +14,27 @@ const router = createRouter({
       name: 'news',
       component: () => import('../views/News.vue')
     },
+    {
+      path: '/events',
+      name: 'events',
+      component: () => import('../views/Events.vue')
+    },
+    {
+      path: '/events/:id',
+      name: 'event',
+      component: () => import('../views/SingleEvent.vue')
+    },
+    {
+      path: '/rock',
+      name: 'rock',
+      component: () => import('../views/Rock.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/Login.vue')
+    }
+
   ]
 })
 

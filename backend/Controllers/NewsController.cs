@@ -25,7 +25,7 @@ public class NewsController : ControllerBase
     [HttpPost("create")]
     public async Task<ActionResult<News>> PostNews(News news)
     {
-        news.date = DateOnly.FromDateTime(DateTime.Now);
+        news.date = DateOnly.FromDateTime(DateTime.Now.Date);
         _context.news.Add(news);
         await _context.SaveChangesAsync();
         return CreatedAtAction("GetNews", new { id = news.id }, news);

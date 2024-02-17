@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HFGF\\Desktop\\lortefrondend\\Backend\\backend.csproj": {}
+    "E:\\Desktop\\Rocksite\\RoyalRockFestival\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HFGF\\Desktop\\lortefrondend\\Backend\\backend.csproj": {
+    "E:\\Desktop\\Rocksite\\RoyalRockFestival\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HFGF\\Desktop\\lortefrondend\\Backend\\backend.csproj",
+        "projectUniqueName": "E:\\Desktop\\Rocksite\\RoyalRockFestival\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\HFGF\\Desktop\\lortefrondend\\Backend\\backend.csproj",
-        "packagesPath": "C:\\Users\\HFGF\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HFGF\\Desktop\\lortefrondend\\Backend\\obj\\",
+        "projectPath": "E:\\Desktop\\Rocksite\\RoyalRockFestival\\backend\\backend.csproj",
+        "packagesPath": "C:\\Users\\asger\\.nuget\\packages\\",
+        "outputPath": "E:\\Desktop\\Rocksite\\RoyalRockFestival\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\HFGF\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\asger\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,6 +44,12 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.2, )"
@@ -67,7 +72,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [

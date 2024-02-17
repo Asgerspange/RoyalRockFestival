@@ -46,7 +46,7 @@ export default {
 
     methods: {
         fetchLatestNews() {
-            axios.get('https://localhost:7014/api/news').then(response => {
+            axios.get('https://192.168.87.139:7014/api/news').then(response => {
                 this.latestNews = response.data
             })
         }

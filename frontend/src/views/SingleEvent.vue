@@ -33,7 +33,7 @@
 
         methods: {
             fetchEvent() {
-                axios.get('https://192.168.87.139:7014/api/events/' + this.$route.params.id).then(response => {
+                axios.get(`https://${import.meta.env.VITE_IP_ADDRESS}/api/events/` + this.$route.params.id).then(response => {
                     this.event = response.data
                 })
             }

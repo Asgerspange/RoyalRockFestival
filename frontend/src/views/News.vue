@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col-lg-12">
-                <div v-if="admin === 1">
+                <div v-if="user.isAdmin == true">
                     <form>
                         <div class="mb-3">
                             <label for="content" class="form-label">Indhold</label>
@@ -23,21 +23,31 @@
 <script>
     import axios from 'axios';
     import LatestNewsComponent from '@/components/LatestNewsComponent.vue';
+    import { useStore } from '@/store';
 
     export default {
         data() {
             return {
-                admin: 1,
                 newNews: {
                     content: null,
                     author: null,
+                },
+
+                user: {
+                    username: '',
+                    password: '',
+                    isAdmin: null
                 }
             }
         },
 
+        mounted() {
+            this.user = useStore().getUser;
+        },
+
         methods: {
             createNews() {
-                axios.post('https://localhost:7014/api/news/create', { content: this.newNews.content, author: this.newNews.author }).then(response => {
+                axios.post(`https://${import.meta.env.VITE_IP_ADDRESS}/api/news/create`, { content: this.newNews.content, author: this.newNews.author }).then(response => {
                     console.log(response.data)
                 })
             }

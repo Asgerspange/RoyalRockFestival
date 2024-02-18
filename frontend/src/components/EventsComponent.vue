@@ -43,7 +43,7 @@ export default {
 
     methods: {
         fetchLatestNews() {
-            axios.get('https://192.168.87.139:7014/api/events').then(response => {
+            axios.get(`https://${import.meta.env.VITE_IP_ADDRESS}/api/events`).then(response => {
                 console.log(response.data)
                 this.events = response.data
             })

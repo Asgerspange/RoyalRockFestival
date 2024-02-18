@@ -22,7 +22,7 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-1 collapse navbar-collapse" id="navbarSupportedContent">
                 <template v-if="isLoggedIn">
-                    <span>{{ user.username }}</span>
+                    <button @click="logout()" class="p-button p-component p-button-danger">Logout</button>
                 </template>
                 <template v-else>
                     <router-link to="/login" class="p-button p-component">Login</router-link>
@@ -44,7 +44,6 @@
                     { label: 'NYHEDER', route: '/news' },
                     { label: 'EVENTS', route: '/events' },
                     { label: 'ROYAL ROCK', route: '/rock' },
-                    { label: 'KONTAKT', route: '/contact' }
                 ],
                 isLoggedIn: false,
                 checkState: true,
@@ -67,6 +66,14 @@
                 return this.isLoggedIn = true;
             }
         },
+
+        methods: {
+            logout() {
+                useStore().setUser({ username: '', password: '', isAdmin: false });
+                this.$router.push('/');
+            }
+        },
+
         components: { RouterLink }
     }
 </script>
@@ -75,5 +82,9 @@
     .navbar {
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         z-index: 10;
+    }
+
+    .p-button {
+        border-radius: 6px !important;
     }
 </style>

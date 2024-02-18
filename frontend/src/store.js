@@ -5,7 +5,7 @@ export const useStore = defineStore('store', {
         user: {
             username: '',
             email: '',
-            isAdmin: null,
+            isAdmin: false,
         },
     }),
 

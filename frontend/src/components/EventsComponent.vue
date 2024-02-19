@@ -38,13 +38,12 @@ export default {
     },
 
     mounted() {
-        this.fetchLatestNews()
+        this.fetchLatestEvents()
     },
 
     methods: {
-        fetchLatestNews() {
+        fetchLatestEvents() {
             axios.get(`https://${import.meta.env.VITE_IP_ADDRESS}/api/events`).then(response => {
-                console.log(response.data)
                 this.events = response.data
             })
         }

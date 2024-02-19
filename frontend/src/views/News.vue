@@ -32,7 +32,6 @@
                     content: null,
                     author: null,
                 },
-
                 user: {
                     username: '',
                     password: '',
@@ -48,7 +47,6 @@
         methods: {
             createNews() {
                 axios.post(`https://${import.meta.env.VITE_IP_ADDRESS}/api/news/create`, { content: this.newNews.content, author: this.newNews.author }).then(response => {
-                    console.log(response.data)
                 })
             }
         },

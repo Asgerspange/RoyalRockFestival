@@ -7,8 +7,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './scss/app.scss'
 
 import InputText from 'primevue/inputtext'
-import FloatLabel from 'primevue/floatlabel'
 import Button from 'primevue/button'
+import Calendar from 'primevue/calendar';
 
 import 'primevue/resources/themes/aura-light-purple/theme.css'
 
@@ -22,7 +22,7 @@ const app = createApp(App)
     .use(store)
     .use(Primevue)
     .component('InputText', InputText)
-    .component('FloatLabel', FloatLabel)
+    .component('Calendar', Calendar)
     .component('Button', Button)
 
 app.mount('#app')

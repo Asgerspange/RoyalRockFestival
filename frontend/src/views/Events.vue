@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col-lg-12">
-                <div>
+                <div v-if="user.isAdmin == true">
                     <form>
                         <div class="row">
                             <div class="col-lg-4">
